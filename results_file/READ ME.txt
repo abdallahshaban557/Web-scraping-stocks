@@ -1,0 +1,1 @@
+Make sure that all of the numeric fields are integers
