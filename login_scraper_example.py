@@ -41,7 +41,7 @@ try:
     #Program Name
     Program_Name = "directed share program"
 
-    for i in range(227, Max_Row_Count):
+    for i in range(1650, Max_Row_Count):
 
         driver.get("https://www.sec.gov/edgar/searchedgar/companysearch.html")
 
@@ -97,18 +97,18 @@ try:
 
             if not Program_Text:
                 
-                Result_sheet.cell(row=i, column=12).value = 0
-                Result_sheet.cell(row=i, column=13).value = 'No Shares Program'
+                Result_sheet.cell(row=i, column=13).value = 0
                 Result_sheet.cell(row=i, column=14).value = 'No Shares Program'
+                Result_sheet.cell(row=i, column=15).value = 'No Shares Program'
 
             else:
-                Result_sheet.cell(row=i, column=12).value = 1
-                Result_sheet.cell(row=i, column=14).value = '.'.join(Program_Text)
+                Result_sheet.cell(row=i, column=13).value = 1
+                Result_sheet.cell(row=i, column=15).value = '.'.join(Program_Text)
 
         except Exception as e:
-            Result_sheet.cell(row=i, column=12).value = 'No SEC Record'
             Result_sheet.cell(row=i, column=13).value = 'No SEC Record'
             Result_sheet.cell(row=i, column=14).value = 'No SEC Record'
+            Result_sheet.cell(row=i, column=15).value = 'No SEC Record'
             Not_Found_Tickers += 1
             print('not found '+ str(Not_Found_Tickers))
             
